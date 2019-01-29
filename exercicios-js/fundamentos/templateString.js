@@ -12,3 +12,4 @@ console.log(`1 + 1 = ${1 + 1} `)
 // ele só soma dentro da expressão $
 
 const up = texto => texto.toUpperCase()   // arrow function
+console.log(`Ei...${up('cuidado')}!`)  // expressão dentro de um template string começa com o ${}
