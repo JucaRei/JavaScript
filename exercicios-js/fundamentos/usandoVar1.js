@@ -17,3 +17,5 @@ function teste() {      // quando defini uma variável dentro da função, ele e
 
 teste()
 console.log(local)
+
+// var ou é global(visivel para todo mundo), ou var no escopo de função
