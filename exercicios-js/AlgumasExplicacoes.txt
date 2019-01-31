@@ -1,0 +1,57 @@
+Entendo o seu raciocínio quanto o statement(declaração) "CONST" - Afinal uma constante é imutável.
+
+Mas primeiro, o legal é entender o conceito de lógica de programação quando falamos de variável.
+
+Variável: Um valor lógico armazenado em memória para ser acessado em algum instante por rotinas, métodos.
+
+Atribuição: Um operador usado para setar(atribuir) um VALOR LÓGIGO em sua variável.
+
+Valor lógico: Condição a ser avaliada por operações: matemáticas, lógicas e tipos de dados...
+
+Nesse três(3) conceitos você já consegue extrair uma resposta para sua pergunta.
+
+Mas... JavaScript tem sua razões para implementação da palavra reservada CONST em ES6!
+
+E a razão é o scope(escopo)!
+
+O Javascript não possuía escopo por bloco - leia-se chaves {}, até o ES6. O que deixava brecha para que o dev. cometesse falhas por equívocos quanto a escopo, tipo uma estrutura de seleção if else por exemplo!
+
+Por isso foi implementado as palavras reservadas LET e CONST para se definir VARIÁVEIS.
+
+Então leia-se assim: VARIÁVEL PODE SER UMA [ LET, CONTS ] QUE RECEBE UM VALOR LÓGICO.
+
+Então substitui-se a declaração VAR por LET ou CONST.
+
+Logo: var = foo || let = foo || const = foo && (foo == VALOR LÓGICO). Percebe a diferença? - Atribuição e Comparação.
+
+Agora a questão do dado ser MUTÁVEL ou não, tem a ver mais com a lógica do seu algoritmo. Entende!!
+
+Se o dado vai mudar ao longo do tempo de vida execução do programa, É VOCÊ QUE DECIDE!
+
+Você manda se vai de LET ou CONST para armazenar um VALOR LÓGICO.
+
+Espero ter ajudado.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Operadores ternários são bem restritos nesse aspecto, ou seja: "ou é um ou é outro"
+
+Caso você queira fazer algum tratamento pra isso você pode utilizar a estrutura do if/else
+
+
+    function checarNota() {
+        const nota = null
+        if(nota) {
+            return nota >= 7? "APROVADO" : "REPROVADO"
+        } else {
+            return "Nota não foi lançada no sistema"
+        }
+    }
+     
+    console.log(checarNota());
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+No node , cada arquivo é um modulo diferente , a aplicação é toda modularizada
