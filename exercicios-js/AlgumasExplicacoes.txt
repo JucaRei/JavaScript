@@ -55,3 +55,15 @@ Caso você queira fazer algum tratamento pra isso você pode utilizar a estrutur
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 No node , cada arquivo é um modulo diferente , a aplicação é toda modularizada
+
+-------------------------------------------------------------------------------------------------------------------
+    CTRL + ;  (//)
+    SHIFT + ALT + A (/**/)
+
+    comentar no vscode
+
+----------------------------------------------------------------------------------------------------------------------------------
+for - para uma quantidade determinada de vezes
+while - para uma quantidade indeterminada de vezes
+switch - seleção multipla
+if/else - seleção multipla tambem , se for mais especifico
