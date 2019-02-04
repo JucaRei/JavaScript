@@ -70,3 +70,28 @@ if/else - seleção multipla tambem , se for mais especifico
 ----------------------------------------------------------------------------------------------------------------------------------
 this é para acessar o dono do codigo , this em funções normais ele pode variar
 dependente de quem faz a chamada ; this em arrow function não varia.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+As funções de seta e as declarações / expressões de função não são equivalentes e não podem ser substituídas às cegas.
+Se a função que você quer substituir não usa this , arguments e não é chamada com new, então sim.
+
+
+ 
+
+Não! As funções de seta e as declarações / expressões de função não são equivalentes e não podem ser substituídas às cegas.
+Se a função que você quer substituir não usa this ,arguments e não é chamada com new , então sim.
+
+ 
+
+Depende . As funções de seta têm um comportamento diferente das declarações / expressões de função, portanto, vamos dar uma olhada nas diferenças primeiro
+
+
+ 
+
+As funções de seta não têm this ou ligação de arguments. Em vez disso, esses identificadores são resolvidos no escopo léxico como qualquer outra variável. Isso significa que dentro de uma função de seta, this e arguments referem aos valores this e arguments no ambiente em que a função de seta é definida (isto é, "fora" da função de seta)
+
+
+
+Pesquina no MDN tentei colar os codigos mas nao deu certo
