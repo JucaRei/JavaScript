@@ -11,3 +11,19 @@ MeuObjeto.prototype.nome = 'Anônimo'
 MeuObjeto.prototype.falar = function(){
     console.log(`Bom dia! Meu nome é ${this.nome}`)
 }
+
+obj1.falar()
+
+obj2.nome = 'Rafael'
+obj2.falar()
+
+const obj3 = {}
+obj3.__proto__ = MeuObjeto.prototype        //mudadando a referencia do objeto do prototype 3
+obj3.nome = 'Obj3'
+obj3.falar()
+
+// Resumindo a loucura...
+console.log((new MeuObjeto).__proto__ === MeuObjeto.prototype)
+console.log(MeuObjeto.__proto__ === Function.prototype)     // MeuObjeto é função ele tem o atributo proto e por padrão, ele aponta pra function prototype
+console.log(Function.prototype.__proto__ === Object.prototype)
+console.log(Object.prototype.__proto__ === null)
