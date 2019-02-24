@@ -7,5 +7,13 @@ const produtos = [
 ]
 
 console.log(produtos.filter(function(p){
-    return p.preco > 10
+    //return p.preco > 100
+    return false
 }))
+
+const caro = produto => produto.preco >= 500
+const fragil = produto => produto.fragil
+
+console.log(produtos.filter(caro).filter(fragil))  // filtros encadeados
+
+// filter eh uma funcao callback que retorna verdadeiro ou falso
