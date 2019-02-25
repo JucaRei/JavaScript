@@ -1,0 +1,1 @@
+e itera pelos itens de um array, e realiza operações nos itens e retorna um resultado final.
