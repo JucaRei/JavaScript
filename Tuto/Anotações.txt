@@ -1,0 +1,47 @@
+reduce :
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+https://medium.freecodecamp.org/reduce-f47a7da511a9
+https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/
+https://medium.freecodecamp.org/reduce-f47a7da511a9
+https://medium.com/shx-brasil/array-reduce-o-canivete-su%C3%ADço-da-programação-funcional-971c35590ed1
+
+
+
+----------------------------------------------------------------------
+npm é o gerenciador de pacotes do node (node package manager)
+npm i (é install)
+-g (global)
+.gitignore (são as coisas que eu quero que sejam ignoradas)
+
+
+----------------------------------------------------------------------
+
+APIs populares : https://github.com/toddmotto/public-apis
+APIs brasileiras: https://99apis.com/home
+
+API exp:
+API, ou Application Programming Interface, é um conjunto de código disponível para a construção de aplicações ou outras APIs. Um exemplo: 
+
+
+
+Em java temos o StringBuilder, que é nada mais nada menos do que um conjunto de classes(pode ser uma classe só também), que disponibiliza uma série de métodos para a manipulação de strings! 
+
+
+
+No contexto da Web, o conceito de API está mais voltado para serviços disponibilizado pela Web para a construção de aplicações ou construção de outras APIs. Um exemplo: 
+
+A AWS(Amazon Web Services) disponibiliza APIs para questões de infra da tua aplicação! A API do Twitter você consegue consumir dados e ver tweets e perfis e por aí vai!
+
+
+
+O que ambas tem em comum? São aglomerados de códigos disponibilizados para a construção de códigos e outras APIs! 
+
+---------------------------------------------------------------------------
+axios - é um client http , ele faz requisições http
+
+package.json - arquivo descritor de um projeto em node, e a descrição de todas as dependências que o projeto precisa (assim como no rails)
+package-lock.json - a versão que foi exatamente testada na máquina
+
+npm init - inicia um projeto ( -y, yes to all)
+--save (alem de colocar no node_modules , ele cria uma area para colocar as dependências do projeto(package.json))
+--save-dev (necessário apenas em desenvolvimento e não em produção)
