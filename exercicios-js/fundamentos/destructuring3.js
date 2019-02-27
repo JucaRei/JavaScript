@@ -1,5 +1,5 @@
 function rand({ min = 0, max = 1000}) {     //destructuring , ja tira de dentro do objeto o atributo min e max ; e entregue esses atributos prontos
-    const valor = Math.random() * (max -min) + min
+    const valor = Math.random() * (max - min) + min
     return Math.floor(valor)
 }
 const obj = { max: 50, min: 40}
