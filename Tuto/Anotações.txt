@@ -13,6 +13,10 @@ npm i (é install)
 -g (global)
 .gitignore (são as coisas que eu quero que sejam ignoradas)
 
+npm init
+
+nodemon (global) - sudo npm i -g nodemon
+
 
 ----------------------------------------------------------------------
 
