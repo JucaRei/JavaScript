@@ -45,3 +45,6 @@ package-lock.json - a versão que foi exatamente testada na máquina
 npm init - inicia um projeto ( -y, yes to all)
 --save (alem de colocar no node_modules , ele cria uma area para colocar as dependências do projeto(package.json))
 --save-dev (necessário apenas em desenvolvimento e não em produção)
+
+---------------------------------------------------------------------------
+module file system já vem no node para ler arquivos (json)
