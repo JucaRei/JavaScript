@@ -5,7 +5,8 @@ https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by
 https://medium.freecodecamp.org/reduce-f47a7da511a9
 https://medium.com/shx-brasil/array-reduce-o-canivete-su%C3%ADço-da-programação-funcional-971c35590ed1
 
-
+middleware:
+https://appdividend.com/2018/02/03/express-middleware-tutorial-example-scratch/
 
 ----------------------------------------------------------------------
 npm é o gerenciador de pacotes do node (node package manager)
@@ -42,6 +43,7 @@ O que ambas tem em comum? São aglomerados de códigos disponibilizados para a c
 
 ---------------------------------------------------------------------------
 axios - é um client http , ele faz requisições http
+lodash - é uma biblioteca , que ja tem varias funcionalidades prontas
 
 package.json - arquivo descritor de um projeto em node, e a descrição de todas as dependências que o projeto precisa (assim como no rails)
 package-lock.json - a versão que foi exatamente testada na máquina
@@ -52,3 +54,46 @@ npm init - inicia um projeto ( -y, yes to all)
 
 ---------------------------------------------------------------------------
 module file system já vem no node para ler arquivos (json)
+
+
+padrão JS - Chain on Responsability ou Middleware (a função middleware tem 3 parâmetros: a requisição, a resposta e o next)
+
+padrão Observer 
+
+-----------------------------------------------------------------------------------------
+FRAMEWORKS Web
+
+- Express JS - bom para fazer os webServices web
+- SailsJS - não é tão minimalista que nem o express e tem mais funções
+- Koa JS - bom para aplicações server-side 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Primeiramente, recursividade é quando você tem uma chamada para um método ou função dela para ela mesma. 
+Ela pode ser útil quando você precisa executar uma mesma tarefa repetidas vezes. Um exemplo de recursividade é um função para calcular o fatorial, olha só:
+
+function fatorial(n){
+    if(n <= 0){
+        return 1
+    }else{
+        return n * fatorial(n-1)
+    }
+}
+ 
+console.log(fatorial(3))
+
+Uma ótima explicação de como funciona a recursividade: https://www.youtube.com/watch?v=X56_FjmbmE4
+
+
