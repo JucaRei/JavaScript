@@ -18,7 +18,7 @@ npm init
 
 nodemon (global) - sudo npm i -g nodemon
 
-
+ npm i --save body-parser (muito importar para tratar do lado do servidor)
 ----------------------------------------------------------------------
 
 APIs populares : https://github.com/toddmotto/public-apis
