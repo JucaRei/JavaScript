@@ -18,7 +18,9 @@ npm init
 
 nodemon (global) - sudo npm i -g nodemon
 
- npm i --save body-parser (muito importar para tratar do lado do servidor)
+npm i --save body-parser (muito importar para tratar do lado do servidor)
+
+npm i node-schedule     (agendamento de tarefas)
 ----------------------------------------------------------------------
 
 APIs populares : https://github.com/toddmotto/public-apis

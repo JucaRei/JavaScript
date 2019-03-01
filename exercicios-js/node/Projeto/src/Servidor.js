@@ -38,7 +38,7 @@ app.post('/produtos', (req, res, next) => {
     res.send(produto)       //JSON // retorna a const produto (save)
 })
 
-app.put('/produtos/:id', (req, res, next) => {
+app.put('/produtos/:id', (req, res, next) => {      // alterar
     const produto = bancoDeDados.salvarProduto({
         id: req.params.id,
         nome: req.body.nome,
