@@ -5,6 +5,9 @@ https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by
 https://medium.freecodecamp.org/reduce-f47a7da511a9
 https://medium.com/shx-brasil/array-reduce-o-canivete-su%C3%ADço-da-programação-funcional-971c35590ed1
 
+Template String:
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings
+
 middleware:
 https://appdividend.com/2018/02/03/express-middleware-tutorial-example-scratch/
 
