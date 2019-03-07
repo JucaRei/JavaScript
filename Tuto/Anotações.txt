@@ -8,6 +8,8 @@ https://medium.com/shx-brasil/array-reduce-o-canivete-su%C3%ADço-da-programaç�
 middleware:
 https://appdividend.com/2018/02/03/express-middleware-tutorial-example-scratch/
 
+operador rest : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
 ----------------------------------------------------------------------
 npm é o gerenciador de pacotes do node (node package manager)
 npm i (é install)
