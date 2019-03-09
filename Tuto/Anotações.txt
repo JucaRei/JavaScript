@@ -77,10 +77,31 @@ FRAMEWORKS Web
 
 
 
+-----------------------------------------------------------------------------------------
 
+Lembre-se da tabela osi
+TCP (Transmission Control Protocol) - orientado a conexão (Confiável) (HandShake - conversa preliminar entre as duas pontas)
+UDP (User Datagram Protocol) - não orientado a conexão (Baseado no melhor esforço (não tem confiabilidade, mais rapido e leve)) - Streaming de dados é geralmente usado nesse protocolo por ser em tempo real
 
+Os processos são mapeados pela porta
 
+os números de portas válidas vão de 0 a 65535. Sendo:
 
+- 0 a 1023 portas do sistema
+
+- 1024 a 49151 portas do usuário
+
+- 49152 a 65535 portas dinâmicas e privadas
+
+De HTTP, a porta padrão é a 80. Porém em ambiente de desenvolvimento, é cada vez mais raro ela ser utilizada por diversos motivos, como por exemplo conflito com outros programas (skype) ou provedores de internet que bloqueiam a porta 80 para o assinante não fazer da máquina dele um servidor e por aí vai...
+
+Antigamente era comum utilizar a porta 8080 como alternativa no desenvolvimento e muitos ainda a utilizam, mas de uns tempos pra cá cresceu bastante a adoção da porta 3000 (3001, 3002, 3003... ) como padrão no desenvolvimento e até na produção de aplicações javascript backend.
+
+Enfim, só é necessário cuidar pra não utilizar uma porta que já esteja em uso por outra aplicação no seu computador ou servidor.
+
+Você pode verificar o padrão de algumas portas em:
+
+https://pt.wikipedia.org/wiki/Lista_de_portas_dos_protocolos_TCP_e_UDP
 
 
 
