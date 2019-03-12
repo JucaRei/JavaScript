@@ -125,3 +125,21 @@ console.log(fatorial(3))
 Uma ótima explicação de como funciona a recursividade: https://www.youtube.com/watch?v=X56_FjmbmE4
 
 
+-----------------------------------------------------------------------------------------
+conteudo dinamico é um conteudo que é gerado a partir de codigo (HTML) 
+conteudo estatico é um conteudo que é servido por um servidor web de forma estatica.
+
+html é estrutura; css é o estilo; javascript é o comportamento.
+servidor DNS - Traduz os nome de domínio em endereço ip , ex:   www.unknown.com.br      --->    54.69.61.89
+cname , subdominio wild-card Amazon
+
+DNS funciona sobre o protocolo UDP na porta 53
+Um DNS pode apontar para outro DNS (por exemplo: um DNS do Brasil , pode apontar para um DNS nos EUA)
+TLS - Transport Layer Security Protocol  (evolução do SSL)
+SSL - Socket Layer Security Protocol
+HTTPS =  HTTP + TLS
+HTTPS =  HTTP + SSL
+CA - Certificadora  Digital
+lets encrypt e cloudflare, são free
+
+certbot - automatiza o processo de instalação do certificado digital
