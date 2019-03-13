@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a>
+    </nav>
+    <section id="Conteúdo"></section>
+    <footer>
+        <br/>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link =>{  // querySelectorAll pega todos, no caso a(link href)
+            const conteudo = document.getElementById('conteudo')  // obter conteudo
+
+            link.onclick = function(e){   // associando a cada 1 dos links uma função, que é associado ao onclick
+                e.preventDefault() // previnir que a ação padrão ocorra 
+                //console.log('ação!!!')
+
+                fetch(link.href) // baseado em promise // uma requisição ajax
+                    .then(resp => resp.text())  // then resposta // resp.text pega o conteudo html da pagina que fez a requisição
+                    .then(html => conteudo.innerHTML = html) // pega aquele conteudo html e substitui
+            } // chamada ajax  
+        })
+    </script>
+</body>
+</html>
