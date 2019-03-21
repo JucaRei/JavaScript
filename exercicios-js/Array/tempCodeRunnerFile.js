@@ -1,1 +1,4 @@
-e itera pelos itens de um array, e realiza operações nos itens e retorna um resultado final.
+const filhas = ['Ualeskah', 'Cibalena']
+const filhos = ['Uoxiton', 'Uesclei']
+const todos = filhas.concat(filhos, 'Fulano')
+console.log(todos, filhas, filhos)
