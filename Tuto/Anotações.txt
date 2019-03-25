@@ -13,6 +13,7 @@ https://appdividend.com/2018/02/03/express-middleware-tutorial-example-scratch/
 
 operador rest : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
+CDN - Content Delivery Network - importante para as requisicoes ao seu servidor (imagens, etc), serem mais rapidas e fluidas
 ----------------------------------------------------------------------
 npm é o gerenciador de pacotes do node (node package manager)
 npm i (é install)

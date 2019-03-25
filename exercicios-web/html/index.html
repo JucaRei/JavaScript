@@ -10,23 +10,25 @@
     <header>
         <h1>Exercícios HTML</h1>
     </header>
-    <nav>
-        <a href="exercicios/teste.html">00 - Teste</a>
+    <nav> <!-- navegação -->
+        <a href wm-nav="exercicios/teste.html">00 - Teste</a> <!-- a linka--> |
+        <a href wm-nav="exercicios/temp.html">01 - TEMP!</a>
     </nav>
     <section id="conteudo"></section>
     <footer>
         <br/>
         Curso de Web Moderno
     </footer>
-    <script>
-        document.querySelectorAll('a').forEach(link =>{  // querySelectorAll pega todos, no caso a(link href)
-            const conteudo = document.getElementById('conteudo')  // obter conteudo
+    <script>  // aqui é digitado o javascript
+        document.querySelectorAll('[wm-nav]').forEach(link =>{  // querySelectorAll pega todos, no caso a(link href) , intercepta o click , pega todas as tags
+            const conteudo = document.getElementById('conteudo')  // obter conteudo (tag da section)
 
-            link.onclick = function(e){   // associando a cada 1 dos links uma função, que é associado ao onclick
+            link.onclick = function(e){   // associando a cada 1 dos links uma função, que é associado ao onclick (quando o usuário clicar)
                 e.preventDefault() // previnir que a ação padrão ocorra 
                 //console.log('ação!!!')
 
-                fetch(link.href) // baseado em promise // uma requisição ajax
+                //fetch(link.href) // baseado em promise // uma requisição ajax
+                fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())  // then resposta // resp.text pega o conteudo html da pagina que fez a requisição
                     .then(html => conteudo.innerHTML = html) // pega aquele conteudo html e substitui
             } // chamada ajax  
