@@ -1,0 +1,52 @@
+<h1>Formulário</h1>
+
+<form method="POST">  <!-- action="http://localhost:3003/usuarios-->
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>               <!-- serve para guarda 1 valor que você não quer exibir para o usuário-->
+        <input type="hidden" name="id" value="3">  <!-- input escondido, que guarda o id de determinado usuario, eh muito comum, ele pode ter valor tbm-->
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="sp">São Paulo</option>
+        <option value="rj">Rio de Janeiro</option>
+        <option value="ce">Ceará</option>
+    </select>
+
+    <select name="interesses" multiple size="6">
+        <option value="js">Javascript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Golang</option>
+        <option value="ruby">Ruby</option>
+        <option value="dart">Dart</option>
+    </select>
+
+    <button formaction="http://localhost:3003/usuarios">Incluir</button> <!-- voce pode ter forms nos botoes , tipo de qual endpoint incluir, metodos de requisicao-->
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+</form>
+
+<style>
+    input,
+    textarea,
+    select{
+        display: block;   /* coloca em blocos */
+        margin-bottom: 6px;        /* espaçamento dos campos*/
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>

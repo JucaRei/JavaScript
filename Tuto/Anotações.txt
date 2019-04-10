@@ -62,6 +62,8 @@ npm init - inicia um projeto ( -y, yes to all)
 --save (alem de colocar no node_modules , ele cria uma area para colocar as dependências do projeto(package.json))
 --save-dev (necessário apenas em desenvolvimento e não em produção)
 
+npm i --save express@4.16.3 body-parser@1.18.2 -E  (E é a versão exata)
+
 http-server .
 http-server -p 9090 .
 http-server -c-1 .                (-c-1 tira o cache, que ja é padrão)
