@@ -1,0 +1,52 @@
+<table>
+    <caption>Produtos</caption>  <!-- caption é pra o que representa essa tabela -->
+    <thead> <!-- defini a área em que você vai colocar o cabeçalho da sua tabela-->
+        <tr>    <!-- Defini uma linha, tr = table row-->
+            <th>Produto</th>  <!-- th = table head-->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody> <!--Corpo da tabela , que de fato , vai conter os dados-->
+        <tr>    <!-- 1 linha dentro da tabela-->
+            <td>Ipad</td>  <!-- td = table data, que é um dado em si.-->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>   <!-- colspan ocupa mais colunas--> <!-- rowspan="2"  - rowspan ocupa mais linhas-->
+            <td>37637,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+
+<style>
+    table{
+        border-collapse: collapse;  /* border-collapse eh para ele nao ter borda */
+    }
+    th, td{
+        padding: 10px;  /* padding da mais espaço entre elementos*/
+    }
+    thead tr{
+        border-bottom: solid 3px #444; /* coloca uma borda na parte debaixo do cabecalho da tabela, solid eh solida , com 3 pixels*/
+    }
+    tbody tr:hover {    /*  na linha da tabela , (hover)quando o clique do mouse passar por cima */
+        background-color: #dedede;
+    }
+    tfoot{
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;   /* negrito na fonte */
+    }
+</style>
