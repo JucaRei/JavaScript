@@ -1,0 +1,80 @@
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342"
+            title="Muro da Cidade por Juca">
+        <!-- src = a fonte , o local da imagem. alt = de alternativa , por exemplo quando nao conseguiu exibir a imagem-->
+    </p>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
+    </p>
+
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
+    </p>
+
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left">
+        Texto huqshushu buwbubqwxqub huqshushu buwbubqwxqub huqshushu buwbubqwxqub
+        huqshushu buwbubqwxqub huqshushu buwbubqwxqub huqshushu buwbubqwxqub
+        huqshushu buwbubqwxqub huqshushu buwbubqwxqub huqshushu buwbubqwxqub
+        huqshushu buwbubqwxqub huqshushu buwbubqwxqub huqshushu buwbubqwxqub
+        huqshushu buwbubqwxqub huqshushu buwbubqwxqub huqshushu buwbubqwxqub
+        huqshushu buwbubqwxqub huqshushu buwbubqwxqub huqshushu buwbubqwxqub
+    </p>
+
+    <p class="cidade"></p>
+
+    <p>
+        <!-- na tag picture , voce pode colocar varias fontes, varias imagens diferentes, e em cima 
+        dessas imagens voce pode aplicar criterios , para que esse imagem seja exibida ou nao-->
+        <picture>
+            <!-- Pode ter varias fontes-->
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px">
+            <!-- so exibe se o tamanho minimo for 600px(propriedade media), caso nao seja , ele vai descendo e vai para a proxima imagem-->
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>
+</div>
+
+<style>
+    p {
+        position: absolute;
+        display: none;      
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        /* pode colocar a imagem pelo css tambem, alem do html*/
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        /* zoom na imagem*/
+    }
+</style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback) {  // recebe o elemento, o inicio , fim , o passo(mover de quanto em quantos passos), callback(quando acabar de mover determinado elemento ele vai chamar a callback)
+        const novoInicio = inicio - passo // vai diminuindo por ex: 1000px para 900 px e assim por diante
+        if (novoInicio >= fim) {   // saber se o novo inicio continuar sendo maior que o fim
+            elem.style.left = novoInicio + 'px'   //novo inicio da propriedade left // unidade pixel
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)  //temporizador de 5 em 5 pixels // recursao(funcao seTimeout,que chama a funcao mover(ela mesma), sera executada de 7 em 7 milisegundos)
+        }
+
+    }
+</script>
