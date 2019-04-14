@@ -29,6 +29,7 @@
         <a href wm-nav="exercicios/form/form.html">07 - Formulário</a> |
         <a href wm-nav="exercicios/imagens.html">08 - Imagens</a> |
         <a href wm-nav="exercicios/video.html">09 - Videos</a> |
+        <a href wm-nav="exercicios/tagsNaoVisuais.html">10 - Tags Não Visuais</a> |
     </nav>
     <section id="conteudo"></section> <!-- conteudo -->
     <footer>
@@ -42,7 +43,7 @@
 
                 link.onclick = function (
                     e
-                    ) { // associando a cada 1 dos links uma função, que é associado ao onclick (quando o usuário clicar)
+                ) { // associando a cada 1 dos links uma função, que é associado ao onclick (quando o usuário clicar)
                     e.preventDefault() // previnir que a ação padrão ocorra 
                     //console.log('ação!!!')
 
@@ -50,7 +51,7 @@
                     fetch(link.getAttribute('wm-nav'))
                         .then(resp => resp
                             .text()
-                            ) // then resposta // resp.text pega o conteudo html da pagina que fez a requisição
+                        ) // then resposta // resp.text pega o conteudo html da pagina que fez a requisição
                         .then(html => conteudo.innerHTML = html) // pega aquele conteudo html e substitui
                 } // chamada ajax  
             })
