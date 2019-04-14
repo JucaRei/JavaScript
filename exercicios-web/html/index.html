@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,39 +12,49 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Exercícios HTML</h1>
     </header>
-    <nav> <!-- navegação -->
+    <nav>
+        <!-- navegação -->
         <a href wm-nav="exercicios/teste.html">00 - Teste</a> <!-- a linka--> |
-        <a href wm-nav="exercicios/texto1.html">01 - Texto 1!</a>  |
-        <a href wm-nav="exercicios/texto2.html">02 - Texto 2!</a>  |
+        <a href wm-nav="exercicios/texto1.html">01 - Texto 1!</a> |
+        <a href wm-nav="exercicios/texto2.html">02 - Texto 2!</a> |
         <a href wm-nav="exercicios/listas.html">03 - Listas</a> |
         <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a> |
         <a href wm-nav="exercicios/links.html">05 - Links</a> |
         <a href wm-nav="exercicios/tabela.html">06 - Tabelas</a> |
         <a href wm-nav="exercicios/form/form.html">07 - Formulário</a> |
         <a href wm-nav="exercicios/imagens.html">08 - Imagens</a> |
+        <a href wm-nav="exercicios/video.html">09 - Videos</a> |
     </nav>
-    <section id="conteudo"></section>  <!-- conteudo -->
+    <section id="conteudo"></section> <!-- conteudo -->
     <footer>
         Curso de Web Moderno
     </footer>
-    <script>  // aqui é digitado o javascript
-        document.querySelectorAll('[wm-nav]').forEach(link =>{  // querySelectorAll pega todos, no caso a(link href) , intercepta o click , pega todas as tags
-            const conteudo = document.getElementById('conteudo')  // obter conteudo (tag da section)
+    <script>
+        // aqui é digitado o javascript
+        document.querySelectorAll('[wm-nav]').forEach(
+            link => { // querySelectorAll pega todos, no caso a(link href) , intercepta o click , pega todas as tags
+                const conteudo = document.getElementById('conteudo') // obter conteudo (tag da section)
 
-            link.onclick = function(e){   // associando a cada 1 dos links uma função, que é associado ao onclick (quando o usuário clicar)
-                e.preventDefault() // previnir que a ação padrão ocorra 
-                //console.log('ação!!!')
+                link.onclick = function (
+                    e
+                    ) { // associando a cada 1 dos links uma função, que é associado ao onclick (quando o usuário clicar)
+                    e.preventDefault() // previnir que a ação padrão ocorra 
+                    //console.log('ação!!!')
 
-                //fetch(link.href) // baseado em promise // uma requisição ajax
-                fetch(link.getAttribute('wm-nav'))
-                    .then(resp => resp.text())  // then resposta // resp.text pega o conteudo html da pagina que fez a requisição
-                    .then(html => conteudo.innerHTML = html) // pega aquele conteudo html e substitui
-            } // chamada ajax  
-        })
+                    //fetch(link.href) // baseado em promise // uma requisição ajax
+                    fetch(link.getAttribute('wm-nav'))
+                        .then(resp => resp
+                            .text()
+                            ) // then resposta // resp.text pega o conteudo html da pagina que fez a requisição
+                        .then(html => conteudo.innerHTML = html) // pega aquele conteudo html e substitui
+                } // chamada ajax  
+            })
     </script>
 </body>
+
 </html>
