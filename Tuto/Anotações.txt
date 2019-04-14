@@ -152,3 +152,7 @@ CA - Certificadora  Digital
 lets encrypt e cloudflare, são free
 
 certbot - automatiza o processo de instalação do certificado digital
+
+
+querySelectorAll - ele retorna uma node list (não é a mesma coisa que um array, ele não tem algumas propriedades que um array tem)
+para transformar ele em um array , existe uma função no array , chamado array.from

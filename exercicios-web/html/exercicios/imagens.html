@@ -40,7 +40,7 @@
 <style>
     p {
         position: absolute;
-        display: none;      
+        display: none;
     }
 
     .circular {
@@ -68,13 +68,96 @@
     }
 </style>
 
-<script>
-    function mover(elem, inicio, fim, passo, callback) {  // recebe o elemento, o inicio , fim , o passo(mover de quanto em quantos passos), callback(quando acabar de mover determinado elemento ele vai chamar a callback)
-        const novoInicio = inicio - passo // vai diminuindo por ex: 1000px para 900 px e assim por diante
-        if (novoInicio >= fim) {   // saber se o novo inicio continuar sendo maior que o fim
-            elem.style.left = novoInicio + 'px'   //novo inicio da propriedade left // unidade pixel
-            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)  //temporizador de 5 em 5 pixels // recursao(funcao seTimeout,que chama a funcao mover(ela mesma), sera executada de 7 em 7 milisegundos)
-        }
 
+<script>
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
     }
+
+    // const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block'
+    // mover(p, 1500, -520, 5, () => {
+    //     console.log('Terminou!!!')
+    // })
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 3, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider()
 </script>
+
+<!-- <script>
+    function mover(elem, inicio, fim, passo,
+        callback
+    ) { // recebe o elemento, o inicio , fim , o passo(mover de quanto em quantos passos), callback(quando acabar de mover determinado elemento ele vai chamar a callback)
+        const novoInicio = inicio - passo // vai diminuindo por ex: 1000px para 995 px e assim por diante
+        if (novoInicio >= fim) { // saber se o novo inicio continuar sendo maior que o fim
+            elem.style.left = novoInicio + 'px' //novo inicio da propriedade left // unidade pixel
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback),
+                7
+            ) //temporizador de 5 em 5 pixels // recursao(funcao seTimeout,que chama a funcao mover(ela mesma), sera executada de 7 em 7 milisegundos)
+        } else {
+            callback() // chama o callback para notificar que o movimento foi finalizado.
+        }
+    }
+    /* const p = document.querySelector('[wm-slider] > p')  // pega a primeira tag p
+        p.style.display = 'block'  // fazer com que a tag p fique visivel,  block é para aparecer
+        mover(p, 1500, -520, 5, () =>{    // suma da tela , de 5 em 5 pixels
+            console.log('Terminou!!!')
+        })   
+    */
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p') // pega todas as tags do tipo p
+        const slides = Array.from(elementos) // tranformei , esses elementos em um array de slides
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlides(slides, slide) {
+        slide.style.display = 'block' // ficar visivel
+
+        const inicio =
+            innerWidth //movimento começa a partir da largura e navega ate menos a largura da tag p, para sair da linha de visão// tamanho da tela atual  // innerWidth , vai dar a largura da pagina
+        const fim = -slide.clientWidth // sair da linha de visão
+
+        slide.style.left = `${inicio}px` // começa a partir desse ponto
+
+        mover(slide, inicio, fim, 5, () => { // chama a função mover // pega o slide, inicio, fim , passo
+            slide.style.display = 'none' // quando acabar , chama de novo a função exibir slide (recursiva)
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1 // atual + 1 proximo
+        return i < lista.length ? lista[i] : lista[0] // se o array ja foi percorrido, ele retorna o elemento 0
+    }
+    slider()
+</script> -->
