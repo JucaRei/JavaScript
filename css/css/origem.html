@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+      body {
+        /* */
+        background-color: aquamarine;
+      }
     </style>
-</head>
+    <link rel="stylesheet" href="css/externo.css" />
+    <!-- link:css -->
+  </head>
 
-<body>
+  <body style="background-color: coral;">
     <h1>E agora?</h1>
-</body>
-
+  </body>
 </html>
+
+<!-- Estilos CSS a prioridade eh definida pela ordem de processamento, o inline no elemento tem uma preferencia maior-->
+<!-- De preferencia colocar css em um arquivo final, separado-->
