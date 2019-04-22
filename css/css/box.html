@@ -5,7 +5,37 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        /*
+            Por padrão no Chrome a margem vem com 8 pixels;
+        */
+        body {
+            font-size: 70px;
+            margin: 0;
+        }
+
+        .c1 {
+            background-color: darkorange
+        }
+
+        .c2 {
+            background-color: skyblue
+        }
+
+        .c3 {
+            background-color: tomato;
+        }
+
+        div {
+            float: left;
+            /* faz com que os elementos caiam para esquerda*/
+            padding-top: 100px;
+            padding: 10px 50px 100px 150px;
+            /* padding eh uma shortcut para o padding-left , top , right, bottom*/
+            padding: 100px 50px;
+            padding: 50px;
+            margin: 0px 20px;
+            border: solid 15px black;
+        }
     </style>
 </head>
 
