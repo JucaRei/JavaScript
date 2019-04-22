@@ -35,21 +35,21 @@ APIs populares : https://github.com/toddmotto/public-apis
 APIs brasileiras: https://99apis.com/home
 
 API exp:
-API, ou Application Programming Interface, é um conjunto de código disponível para a construção de aplicações ou outras APIs. Um exemplo: 
+API, ou Application Programming Interface, é um conjunto de código disponível para a construção de aplicações ou outras APIs. Um exemplo:
 
 
 
-Em java temos o StringBuilder, que é nada mais nada menos do que um conjunto de classes(pode ser uma classe só também), que disponibiliza uma série de métodos para a manipulação de strings! 
+Em java temos o StringBuilder, que é nada mais nada menos do que um conjunto de classes(pode ser uma classe só também), que disponibiliza uma série de métodos para a manipulação de strings!
 
 
 
-No contexto da Web, o conceito de API está mais voltado para serviços disponibilizado pela Web para a construção de aplicações ou construção de outras APIs. Um exemplo: 
+No contexto da Web, o conceito de API está mais voltado para serviços disponibilizado pela Web para a construção de aplicações ou construção de outras APIs. Um exemplo:
 
 A AWS(Amazon Web Services) disponibiliza APIs para questões de infra da tua aplicação! A API do Twitter você consegue consumir dados e ver tweets e perfis e por aí vai!
 
 
 
-O que ambas tem em comum? São aglomerados de códigos disponibilizados para a construção de códigos e outras APIs! 
+O que ambas tem em comum? São aglomerados de códigos disponibilizados para a construção de códigos e outras APIs!
 
 ---------------------------------------------------------------------------
 axios - é um client http , ele faz requisições http
@@ -74,14 +74,14 @@ module file system já vem no node para ler arquivos (json)
 
 padrão JS - Chain on Responsability ou Middleware (a função middleware tem 3 parâmetros: a requisição, a resposta e o next)
 
-padrão Observer 
+padrão Observer
 
 -----------------------------------------------------------------------------------------
 FRAMEWORKS Web
 
 - Express JS - bom para fazer os webServices web
 - SailsJS - não é tão minimalista que nem o express e tem mais funções
-- Koa JS - bom para aplicações server-side 
+- Koa JS - bom para aplicações server-side
 
 
 
@@ -118,7 +118,7 @@ https://pt.wikipedia.org/wiki/Lista_de_portas_dos_protocolos_TCP_e_UDP
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-Primeiramente, recursividade é quando você tem uma chamada para um método ou função dela para ela mesma. 
+Primeiramente, recursividade é quando você tem uma chamada para um método ou função dela para ela mesma.
 Ela pode ser útil quando você precisa executar uma mesma tarefa repetidas vezes. Um exemplo de recursividade é um função para calcular o fatorial, olha só:
 
 function fatorial(n){
@@ -128,14 +128,14 @@ function fatorial(n){
         return n * fatorial(n-1)
     }
 }
- 
+
 console.log(fatorial(3))
 
 Uma ótima explicação de como funciona a recursividade: https://www.youtube.com/watch?v=X56_FjmbmE4
 
 
 -----------------------------------------------------------------------------------------
-conteudo dinamico é um conteudo que é gerado a partir de codigo (HTML) 
+conteudo dinamico é um conteudo que é gerado a partir de codigo (HTML)
 conteudo estatico é um conteudo que é servido por um servidor web de forma estatica.
 
 html é estrutura; css é o estilo; javascript é o comportamento.
@@ -156,3 +156,17 @@ certbot - automatiza o processo de instalação do certificado digital
 
 querySelectorAll - ele retorna uma node list (não é a mesma coisa que um array, ele não tem algumas propriedades que um array tem)
 para transformar ele em um array , existe uma função no array , chamado array.from
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+
+CSS
+
+label -[
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/label
+https://stackoverflow.com/questions/7636502/why-use-label
+https://stackoverflow.com/questions/24652687/why-should-you-use-the-label-tag-and-for-attribute
+]

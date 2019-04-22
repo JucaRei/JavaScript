@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
+<!-- .tag eh a classe, #algumacoisa, eh o id, * eh tudo-->
 
 <head>
     <meta charset="UTF-8">
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* #aninhado > div - pega dentro desse id aninhado as divs dentro dele
+           #aninhado section  - pega o descendente de aninhado section
+            p + ul - seleciona a tag ul que vem diretamente(tem que ser o proximo) depois de p
+            p + ol  - não funciona pq não são vizinhos
+            p ~ ol - (general siblings) irmão de forma geral , ai funciona(estão dentro de 1 mesmo pai)
+            [feira] - seletor que eh uma propriedade(procura todos os elementos que tem como propriedade feira)
+            [feira=casa] - associar atributo com o valor
+            [feira~=escritorio] - pega possiveis elementos que estejam dentro dos valores, mesmo que separados com espaço
+            [feira*=sa] - pega todos os valores que estão associados a sa
+            span:nth-child(1)  - tag span que seja filho de alguem ( na primeira posição, que seja o filho numero de uma outra tag
+            section > :nth-child(odd) - dentro de uma section, me dê todos filhos impares
+            section > :nth-child(even) - são os pares
+            section > span:nth-of-type(2) - quero pegar o segundo elemento do tipo span, dentro da section
+        */
+        section>span:nth-of-type(2) {
+            color: #ff0;
+            background-color: #f77;
+
+        }
     </style>
 </head>
 
@@ -29,7 +48,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
@@ -42,3 +61,88 @@
 </body>
 
 </html>
+
+<!--
+     <style>
+        /*Seletor Universal*/
+        /* * {
+            color: #ff0;
+            background-color: skyblue;
+        } */
+        /*Seletor de Classe*/
+        /* .tag {
+            color: #ff0;
+            background-color: skyblue;
+        } */
+        /*Seletor de Id*/
+        /* #aprovados {
+            color: #ff0;
+            background-color: skyblue;
+        } */
+
+        /*Seletor de Id aninhado*/
+        #aninhado>div {
+            color: #ff0;
+            background-color: rgb(163, 149, 243);
+        }
+
+        /*Seletor de descendente*/
+        /* #aninhado span {
+            background-color: tomato;
+        } */
+
+        /*Seletor de irmão adjacentes*/
+        p+ul {
+            color: silver;
+        }
+
+        /*Seletor de irmãos adjacentes e não adjacentes*/
+        p~ul {
+            color: yellowgreen;
+        }
+
+        p~ol {
+            color: black;
+        }
+
+        /*Seletor de Atributo*/
+        [feira] {
+            background-color: purple;
+        }
+
+        /*Seletor de Atributo Específico*/
+        [feira=casa] {
+            color: yellow;
+        }
+
+        /*Seletor de Atributos Específicos e Compostos*/
+        [feira~=escritorio] {
+            color: gold;
+        }
+
+        /*Seletor de Atributo por 'Termos'*/
+        [feira*=presa] {
+            color: orangered;
+        }
+
+        /* Dentro da Section primeiro elemento | section nolabel*/
+        /* section > :nth-child(1) {
+            color: darkblue;
+        } */
+
+        /* Dentro da Section elementos ímpares | section nolabel*/
+        section> :nth-child(odd) {
+            color: darkblue;
+        }
+
+        /*ol sem nolabel.. pares viram ímpares.. pq label =1*/
+        ol :nth-child(even) {
+            color: darkred;
+        }
+
+        /*2o span da section*/
+        section>span:nth-of-type(2) {
+            background-color: rgb(204, 21, 158);
+        }
+    </style>
+-->
