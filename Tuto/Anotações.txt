@@ -170,3 +170,4 @@ https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/label
 https://stackoverflow.com/questions/7636502/why-use-label
 https://stackoverflow.com/questions/24652687/why-should-you-use-the-label-tag-and-for-attribute
 ]
+viewport eh o tamanho da pagina

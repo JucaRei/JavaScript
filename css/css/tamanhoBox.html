@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        * {
+            box-sizing: border-box;
+            /* vai ser aplicado para toda a aplicação*/
+        }
+
         body {
             font-size: 45px;
+            margin: 0;
+            text-align: center;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            /* box-sizing: content-box; */
+            /* box-sizing: border-box; */
+            /* borda pra dentro sera considerado o tamanho (borda pra dentro)*/
         }
     </style>
 </head>
+
 <body>
     <div>
         O tamanho do Box é...
     </div>
 </body>
+
 </html>

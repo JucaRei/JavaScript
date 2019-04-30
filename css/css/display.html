@@ -5,7 +5,45 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        /* ...
+        Display torna um componente invisivel ( ex: flexbox, flexgrid)
+        */
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        li {
+            background-color: purple;
+        }
+
+        div,
+        span,
+        li {
+            width: 50%;
+            /* unidade relativa */
+            width: 200px;
+            /* unidade de valores absolutos */
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            /* display: block;*/
+            /* display: inline */
+            display: inline-block;
+        }
     </style>
 </head>
 
