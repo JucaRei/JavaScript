@@ -11,11 +11,107 @@
             margin: 0;
         }
 
+        html {
+            font-size: 28px;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
+        div {
+            font-size: 50px;
+        }
+
+        p {
+            /* valores padrões */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+            /* 12pt eh equivalente a 16px, 1em , 100% */
+            /* unidades absolutas */
+            font-size: 100px;
+            /* tamanho do pixel eh relativo, vai depender da densidade da sua tela*/
+            font-size: 72pt;
+            /* pontos*/
+
+            font-size: 1in;
+            /* polegada */
+
+            /* unidades relativas */
+            font-size: 2.2em;
+            /* pega a font padrão do browser que eh 16px e multiplica por 2.2 */
+
+            font-size: 2.2rem;
+            /* 2.2 vezes a referencia do html */
+
+            font-size: 50vh;
+            font-size: 10vw;
+            /* baseadas em viewport */
+
+            font-family: monospace;
+            /* todas as letras ocupam o mesmo espaço */
+
+            font-family: Georgia, serif;
+            /* fontes serifadas */
+
+            font-family: Verdana, sans-serif;
+            /* fonte não serifada */
+
+            font-family: 'Indie Flower', cursive;
+            /* fontes cursivas, parece mais com a escrita humana */
+
+            font-weight: 100;
+            /* font-weight: bold */
+            /* font-weight: 900; */
+            /* peso da fonte */
+
+            text-transform: capitalize;
+            /* tranforma para letras maiusculas */
+
+            /* text-decoration: overline underline line-through; */
+            /* linha em baixo, linha em cima , linha no meio */
+
+            word-spacing: 10px;
+            /* separação entre as palavras */
+
+            letter-spacing: 20px;
+            /* separação entre as letras de uma palavra */
+
+            line-height: 2.5em;
+            /* altura da linha */
+
+            text-align: center;
+            /* text-align: right;
+            text-align: left; */
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        /* pseudo classe active
+         quando o link esta ativo ele aplica o que esta dentro*/
+        .destaque:active {
+            box-shadow: none;
+            /* quando clicar da a ideia, de que foi aplicado e de fato você clicou no botão */
+        }
+
+        /* .destaque:hover {
+            background-color: #ff634780;
+        } */
     </style>
 </head>
 
