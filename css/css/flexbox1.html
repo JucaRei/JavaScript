@@ -1,29 +1,87 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Flexbox #01</title>
+		<link rel="stylesheet" href="css/tag.css" />
+		<style>
+			div {
+				border: solid 5px dodgerblue;
+				font-size: 40px;
+				margin: 5px;
+			}
+			.big {
+				font-size: 1.5em;
+			}
+			/* por padrão é a linha no flexbox
+               flexbox é unidimensional , ou escolhe linha ou coluna
+            */
+			.flex-container {
+				display: flex;
+				flex-direction: column;
+				/* volta a ser coluna */
+				flex-direction: column-reverse;
+				/* reverteu a coluna de forma reversa */
+				flex-direction: row-reverse;
+				/* linha reversa */
+				flex-direction: row;
+				/* padrão */
+				width: 50%;
+				height: 200px;
+				flex-wrap: wrap;
+				/* quebrar a linha */
+				flex-wrap: wrap-reverse;
+				/* reversa */
+				flex-flow: row wrap;
+				flex-flow: column-reverse wrap;
+				/* coluna reversa e quebra as colunas */
+				flex-flow: row wrap;
 
-<head>
-    <meta charset="UTF-8">
-    <title>Flexbox #01</title>
-    <link rel="stylesheet" href="css/tag.css">
-    <style>
-        /* ... */
-    </style>
-</head>
+				justify-content: flex-start;
+				/* justificar pro ínicio */
+				justify-content: flex-end;
+				/* justificar pro final */
+				justify-content: center;
+				/* justificar pro centro */
+				justify-content: space-around;
+				/* coloca espaço entre os elementos para ficar uniforme */
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				/* justify-content: space-evenly; */
 
-<body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel big">3</div>
-        <div class="tag nolabel">4</div>
-        <div class="tag nolabel">5</div>
-        <div class="tag nolabel">6</div>
-        <div class="tag nolabel">7</div>
-        <div class="tag nolabel">8</div>
-        <div class="tag nolabel">9</div>
-        <div class="tag nolabel">10</div>
-    </div>
-    <script src="js/tag.js"></script>
-</body>
+				/* Cross Axis */
+				height: 400px;
+				align-items: stretch;
+				align-items: baseline;
+				align-items: flex-start;
+				/* alinhados pelo começo */
+				align-items: flex-end;
+				/* alinhados pelo final */
+				align-items: center;
 
+				/* mais de uma linha */
+				align-content: flex-start;
+				align-content: flex-end;
+				align-content: center;
+				align-content: space-around;
+				align-content: space-between;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container tag nolabel">
+			<div class="tag nolabel">1</div>
+			<div class="tag nolabel">2</div>
+			<div class="tag nolabel big">3</div>
+			<div class="tag nolabel">4</div>
+			<div class="tag nolabel">5</div>
+			<div class="tag nolabel">6</div>
+			<div class="tag nolabel">7</div>
+			<div class="tag nolabel">8</div>
+			<div class="tag nolabel">9</div>
+			<div class="tag nolabel">10</div>
+		</div>
+		<script src="js/tag.js"></script>
+	</body>
 </html>
