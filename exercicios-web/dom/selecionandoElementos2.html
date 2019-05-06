@@ -46,3 +46,16 @@
 </body>
 
 </html>
+
+<!-- Seguinte, para que você possa dar um espaço ou você tem que usar uma virgula ou você tem que usar o >
+
+Quando eles estão juntos significar que ele quer o terceiro E o ultimo.
+Quando você da um espaço e utiliza uma virgula significa que você quer o terceiro OU o ultimo
+
+E quando você adiciona o > , você está dizendo que quer o parente direto.
+
+const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add("destaque"))
+selecionar(".terceiro.ultimo") // terceiro E ultimo
+selecionar(".terceiro, .ultimo") // terceiro Ou ultimo
+selecionar(".terceiro > .ultimo") // dentro de terceiro pegue o primeiro elemento com a classe .ultimo
+-->

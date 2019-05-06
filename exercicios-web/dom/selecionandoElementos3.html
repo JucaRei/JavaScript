@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         form input,
         form select,
         form button {
@@ -23,16 +23,26 @@
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
     <form name="pesquisa" action="http://www.google.com.br/search">
+        <!-- Eh necessario ter o name no formulario (form) e os inputs tambem -->
         <input type="text" name="q" placeholder="Digite o termo...">
         <select name="hl">
+            <!-- hl - host language -->
             <option value="pt-br">Português (Brasil)</option>
             <option value="en-us">Inglês (Americano)</option>
         </select>
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        console.log(document.forms) // tras 1 array com todos os formularios do tipo html collection
+        console.log(document.forms[0]) // tras o array de indice 0
+        console.log(document.getElementsByName('pesquisa'))  // tras 1 nodelist
+        console.log(document.getElementsByTagName('pesquisa'))  // HTML Collection
+        console.log(document.pesquisa)  // tras o formulario pesquisa
+        console.log(document.pesquisa.q)  // entrou no formulario pesquisa e pegou o input , que tem o nome q
+        document.pesquisa.q.value = 'Linux Brasil'  // você pode mudar o valor daquele input
+        document.pesquisa.hl.value = 'en-us'  // lembrando hl eh host language
+        console.log(document.pesquisa.hl.selectedIndex)  // mostra o indice selecionado
     </script>
-</body>
+    </b ody>
 
 </html>

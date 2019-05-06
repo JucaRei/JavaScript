@@ -22,7 +22,35 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        //DOM eh uma estrutura de arvore
+        //função para imprimir
+        function log() {
+            console.log(this)
+        }
+        HTMLCollection.prototype.log = log    // recebe a função log
+        HTMLElement.prototype.log = log     // recebe a função log
+        NodeList.prototype.log = log        // recebe a função log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log()
+        lista.childNodes.log()
+
+        const primeiro = lista.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log()      //selecionar o proximo irmão desse elemento
+
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log()    // pegar 1 elemento anterior
+
+        lista.children.log()    //pegar nos filhos (não vem os textos , vem apenas os li)
+        lista.firstElementChild.log()  //tras o primeiro elemento que de fato foi definido na li
+        lista.lastElementChild.log()
+        lista.parentNode.previousElementSibling.log()    // pega o elemento irmão anterior ao parent da lista (a div anterior)
+        lista.parentNode.nextElementSibling.log()
+
+        document.querySelectorAll('div ul li').log()  // o melhor jeito de pegar o que você quer
     </script>
 </body>
 
