@@ -15,7 +15,12 @@
         <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
     </div>
     <script>
-        // ...
+        // querySelector('img') seleciona uma tag
+        // querySelector('.img') seleciona uma classe
+        // querySelector('#img') seleciona um id
+        // querySelector('[img]') seleciona uma propriedade
+        const img = document.querySelector('img')
+        console.log('getAttribute', img.getAttribute('src'))  //acessar os atributos da imagem
     </script>
 </body>
 
