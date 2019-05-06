@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Selecionar Elementos #02</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body class="conteudo exercicio">
     <div id="primeiro">#primeiro</div>
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
-    <script>              
-        // ...
+    <script>
+        // usa o # porque o querySelector espera um seletor css
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        const selecionar = seletor =>    //seletor css que eu passei pra função
+            document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+        //querySelectorAll não retorna um HTML Collection e sim um NodeList(tem a função forEach)
+
+        const deselecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+        selecionar('div')
+
+        deselecionar('*')
+        selecionar('.terceiro.ultimo')
+
+        deselecionar('*')
+        selecionar(':not(#primeiro')   // eh uma negação , então todo mundo que não eh primeiro vai ser selecionado
+
+        deselecionar('*')
+        selecionar(':nth-child(1)') // seleciona o primeiro filho de algum elemento
+
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)')  //seleciona o primeiro elemento do tipo div (o span não eh do tipo div, por isso não eh selecionado)
+
+        deselecionar('*')
+        selecionar('span:nth-of-type(1)')
+
+        deselecionar('*')
+        //selecionar a partir de um atributo
+        selecionar('[wb-attrib]')   //atributo personalizado
     </script>
 </body>
+
 </html>
