@@ -9,9 +9,25 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- precisa passar event mesmo -->
+        <!-- onclick="navegarEm5s(event)" -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        function navegarEm5s(e) {
+            e.preventDefault()      // vai previnir que o evento padrão ocorra
+            console.log('Saindo em 5s....')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)  // 5 segundos
+        }
+
+        // jeito mais interessante de realizar a chamada da função
+        // const a = document.querySelector('a')
+        // a.onclick = navegarEm5s
+
+        const a = document.querySelector('[espera-um-pouco]')       // usando atributo personalizado
+        a.onclick = navegarEm5s
     </script>
 </body>
