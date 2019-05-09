@@ -51,6 +51,7 @@ A AWS(Amazon Web Services) disponibiliza APIs para questões de infra da tua apl
 
 O que ambas tem em comum? São aglomerados de códigos disponibilizados para a construção de códigos e outras APIs!
 
+https://contabo.com/  contabo vps
 ---------------------------------------------------------------------------
 axios - é um client http , ele faz requisições http
 lodash - é uma biblioteca , que ja tem varias funcionalidades prontas
