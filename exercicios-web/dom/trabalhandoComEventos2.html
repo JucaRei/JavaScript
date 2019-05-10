@@ -10,6 +10,24 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        const item = document.querySelector('div')
+        item.style.position = 'absolute'
+
+        //mover a div com o mouse
+        item.onmousemove = e => {
+            const item = e.target
+            item.style.cursor = 'move'
+            // so quero mover essa div, quando clicar e arrastar
+            // propriedade que muda o valor
+            if (e.buttons) {  // diferente de 0?, significa que alguem clicou
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px` // mexer com a posição desse elemento
+                // e.target é quem disparou o evento , em outras palavras (div.style.top) de onde ela esta em relação ao top da pagina
+                // e.clientY, eixo y que é o vertical , onde o mouse está ; menos a altura da div divido por 2
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px`
+                // posição x  do cursor no mouse (horizontal)
+                // agora consegue movimentar a div em qualquer parte
+                // esse - divindo por 2 , é para a div sempre quando clicada ficar no meio dela
+            }
+        }
     </script>
 </body>

@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <meta charset='UTF-8'>
+    <meta charset="UTF-8" />
     <title>Trabalhando com Eventos #04</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <link rel="stylesheet" href="css/estilo.css" />
     <style>
         form {
             display: flex;
             flex-direction: column;
         }
-        
+
         form input,
         form select,
         form button {
@@ -23,14 +23,48 @@
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
     <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
+        <input type="text" name="q" placeholder="Digite o termo..." />
         <select name="hl">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en-us">Inglês (Americano)</option>
-            </select>
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        // const submit = document.querySelector('[wm-submit]')
+        // submit.onclick = function (e) {
+        //     e.preventDefault()
+
+        //     // obter os dados de um formulário a partir de um objeto chamado form data
+        //     const form = e.target.parentNode // e.target é o botão nesse caso, parentNode dele que esta envolvendo esse botão no caso o Formulário
+        //     const formData = new FormData(form)
+        //     // adicionei uma informação no form data que nåo tinha
+        //     formData.append('ajax', true)
+        //     console.log(formData.get('q'))  // verificar um determinado valor
+        //     console.log(formData.has('hl'))    // verificar se determinado campo está ou não contido
+
+        //     // formdata tem o iterator associado a ele
+        //     for (let dado of formData) {
+        //         console.log(dado)
+        //     }
+        // }
+
+        // Evento on submit
+        const form = document.forms[0]; // so tem 1 form
+        form.onsubmit = function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+            formData.append("ajax", true);
+            console.log(formData.get("q"));
+            console.log(formData.has("hl"));
+
+            for (let dado of formData) {
+                console.log(dado);
+            }
+        };
     </script>
 </body>
+
+</html>

@@ -10,19 +10,19 @@
             margin: 0;
             display: flex;
         }
-        
+
         .esquerda {
             height: 100vh;
             width: 50%;
             background-color: coral;
         }
-        
+
         .direita {
             height: 100vh;
             width: 50%;
             background-color: cornflowerblue;
         }
-        
+
         .item {
             border: solid 5px black;
             background-color: darkgrey;
@@ -44,8 +44,27 @@
         <div class="item">4</div>
     </div>
     <div class="direita" wm-dropzone></div>
+
     <script>
-        // ...
+        const items = document.querySelectorAll('[wm-dropzone] .item') // pega os itens que estão somente no dropzone
+        items.forEach((item, index) => {     // pega o proprio elemento e o indice
+            item.draggable = true       // propriedade arrastar os itens , mover de local
+            item.id = item.id || `draggable-item-${index}`      // definir que o item tem 1 id // o item tem que ter um id , se for falso coloca `draggable-item-${index}` (gerar id's diferentes)
+            item.ondragstart = e =>     // associar evento ondragstart , iniciar o drag
+                e.dataTransfer.setData('item-id', e.target.id)      // setar o elemento que estou arrastando
+        })
+
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        dropzones.forEach(dropzone => {
+            dropzone.ondragover = e => e.preventDefault()       // previnir o comportamento padrão do browser
+            dropzone.ondrop = function (e) {        // quando soltar o elemento
+                const id = e.dataTransfer.getData('item-id')         // pega o id no drop  pega elemento
+                const item = document.getElementById(id)        // entenda qual o elemento de fato esta sendo movido
+                //e.target.appendChild(item)      // e.target ele pode colocar 1 item sobre o outro como subitens
+                dropzone.appendChild(item)       // so adiciona o elemento dentro daquela dropzone e não com outro   // adicionar o elemento em outro local
+                // adiciono como filho de outro nó num dom , ele deixa de ser um filho de outra parte
+            }
+        })
     </script>
 </body>
 
