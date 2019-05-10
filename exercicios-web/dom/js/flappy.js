@@ -1,9 +1,11 @@
+// função para criar um novo elemento
 function novoElemento(tagName, className) {
-  const elem = document.createElement(tagName);
+  const elem = document.createElement(tagName); // recebe como parâmetro o nome da tag
   elem.className = className;
   return elem;
 }
 
+// 2 barreiras uma embaixo e outro encima
 function Barreira(reversa = false) {
   this.elemento = novoElemento("div", "barreira");
 
