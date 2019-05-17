@@ -140,8 +140,9 @@ function estaoSobrepostos(elementoA, elementoB) {
   return horizontal && vertical;
 }
 
+//testar colisão entre o passaro e as barreiras
 function colidiu(passaro, barreiras) {
-  let colidiu = false;
+  let colidiu = false; // inicialmente é falso
   barreiras.pares.forEach(parDeBarreiras => {
     if (!colidiu) {
       const superior = parDeBarreiras.superior.elemento;
