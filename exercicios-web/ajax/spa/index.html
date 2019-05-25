@@ -25,6 +25,34 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletor, push = true) {    // push colocar no historico
+            if (!url || !seletor) return    // se não tiver nenhum dos dois, sai da função
+            const elemento = document.querySelector(seletor)
+            fetch(url)
+                .then(resp => resp.text())  // text por ser dados html e não json
+                .then(html => {
+                    elemento.innerHTML = html
+                    if (push) {     //colocar no historico mesmo sendo single page application
+                        history.pushState({ seletor }, 'Página Ajax', url)
+                    }
+                })
+        }
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value     // pega o valor desse atributo e armazena em url
+            const seletorDestino = link.attributes['wm-destino'].value
+
+            //capturar o evento do click desse link
+            link.onclick = e => {
+                e.preventDefault()    // não quero o procedimento padrão
+                navegarViaAjax(url, seletorDestino)
+            }
+        })
+
+        window.onpopstate = e => {   // tirando um elemento da pilha do estado de navegação
+            if (e.state) {
+                navegarViaAjax(window.location.href, e.state.seletor, false)
+            }
+        }
     </script>
 </body>
