@@ -180,3 +180,6 @@ Eu não sou muito fã do bootstrap, existem outros frameworks que prefiro utiliz
 Atualmente o meu queridinho é o Bulma (https://bulma.io/). Acho bem simples e fácil de lembrar e utilizar. Para fazer um grid basta eu colocar a class columns no container principal e column nos elementos que vão dentro do container que ele organiza. Para colocar o tamanho que ocupa no grid só usar is-size-4 e se quiser separar responsivo dá pra fazer is-size-4-desktop ,  is-size-5-tablet e is-size-6-mobile  Um botão basta colocar .button e se for primário é só adicionar .is-primary . Se um parágrafo precisar ser centralizado a class é .has-text-centered  e por aí vai E ele é modular também, se eu quiser utilizar só pra botões eu consigo que no build do projeto ele import só css respectivo para botões, se se for utilizar só grid, import do css só do grid. O que deixa mais leve.
 
 Enfim, usar ou não um framework vai variar muito. E as vezes uso, as vezes não uso e geralmente tô sempre testando diferentes frameworks tb.
+
+
+Typescript json  - https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
