@@ -183,3 +183,5 @@ Enfim, usar ou não um framework vai variar muito. E as vezes uso, as vezes não
 
 
 Typescript json  - https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+Gulp - https://www.typescriptlang.org/docs/handbook/gulp.html
