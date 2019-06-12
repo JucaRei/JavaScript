@@ -1,0 +1,1 @@
+// trabalhar com as dependências que depende a aplicação
