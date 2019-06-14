@@ -5,7 +5,7 @@
     <meta charset='UTF-8'>
     <title>Entendendo jQuery</title>
     <link rel='stylesheet' href='css/estilo.css'>
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script> <!-- NOTE chamada do javascript-->
 </head>
 
 <body class="conteudo exercicio">
@@ -14,6 +14,17 @@
     <div>2</div>
 
     <script>
-        // ...
+        // SECTION   seletor jquery, automaticamente vai selecionar um conjunto de objetos. Hide vai esconder os elementos, pelo tempo determinado
+        $('div').hide(5000).show(5000).fadeOut(5000).fadeIn(5000)
+        console.log($('div').get(1))
+        console.log($.isEmptyObject({ nome: null }))
+        console.log(jQuery.inArray(3, [1, 2, 3]))   // numero 3 esta dentro do array 1,2,3 ?
+
+        $.fn.fundoVerde = function () {
+            this.css('background-color', 'green')  // objeto no qual estou trabalhando
+            return this     // a função alem de fazer o que tem que fazer, ela esta retornando o proprio objeto, eu consigo encadear as chamadas
+        }
+
+        $('body').fundoVerde().fadeOut(15000)
     </script>
 </body>
