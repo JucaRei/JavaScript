@@ -20,6 +20,40 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function mostrarPosicaoMouse(e) {        // função que atualiza posição atual do mouse
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+
+        // associar ao body o movimento do mouse]
+        $('body').on('mousemove', mostrarPosicaoMouse)       // função on é uma função que registra um evento dentro do jQuery, sempre que o mouse mexer ele vai disparar um evento  // passar a função como parametro
+
+        $('#posicao').mouseover(e => {      // mousemove não estará ativo quando o mouse ficar em cima de #posicao
+            $('body').off('mousemove', mostrarPosicaoMouse)
+        })
+
+        $('#posicao').mouseleave(e => {         // quando sair de #posição, ele volta de novo a monitorar
+            $('body').on('mousemove', mostrarPosicaoMouse)
+            //   $('body').mousemove(mostrarPosicaoMouse)
+        })
+
+        // controlar o estado de quantos cliques, eu dei
+        let cliques = 0
+        $('body').click(e => {
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+
+        // mudar o background da pagina 
+        const backgroundOriginal = $('body').css('background-color')  // armazenei a cor original nessa constante
+
+        // this??
+        $('input').keyup(function (e) {     // keyup vem sempre o valor mais atual
+            const valor = $(this).val()
+            //console.log(valor)
+            if (valor.match(/#[\da-fA-F]{6}/)) {      // vai mudar a cor do background se a cor existir
+                $('body').css('background-color', valor)
+            } else {  // senão volta a cor original
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
     </script>
 </body>
