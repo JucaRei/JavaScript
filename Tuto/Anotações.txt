@@ -193,3 +193,9 @@ STUB - Used for generated default snippets
 NOTE - An important note for a specific code section
 REVIEW - An item that needs additional review
 SECTION - Used to define a region (See 'Hierarchical anchors')
+
+
+
+Cap bootstrap
+npm i --save-dev jquery@3.3.1 -E
+npm i --save-dev popper.js@1.14.3 -E             ToolTips
