@@ -22,6 +22,29 @@
     </div>
 
     <script>
+        //const $ = { nome: 'Não é o jQuery' }
+        // proteger a expressão $( do jQuery), Função Auto Invocada NOTE     
+        (function ($) {
+            $.fn.interpretar = function () {
+                const retirarChaves = s => s.substring(2, s.length - 2)     // substring que vai retirar os 2 primeiros e 2 ultimos caracteres ( as chaves)
+                const conteudo = $(this).html()     //pega o conteúdo
+                const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g)       /* uma vez com o conteúdo aplico a regex = ler  tudo o que tiver 2 chaves literais {{}} */
+                const expressoes = expressoesComChaves.map(retirarChaves)
+                const resultados = expressoes.map(e => eval(e))      // resultado vai ser armazenado nesse array de resultados
 
+                let conteudoFinal = conteudo
+                for (let i = 0; i < expressoesComChaves.length; i++) {
+                    conteudoFinal = conteudoFinal.replace(
+                        expressoesComChaves[i], resultados[i]
+                    )
+                }
+                $(this).html(conteudoFinal)     // substituir a expressaoComChave pelo resultado associado a ela
+                return this
+            }
+        })(jQuery)
+
+        $('div').interpretar()      // vai ler a div , interpretar e substituir as expressões com os resultados
+
+    // NOTE  https://learn.jquery.com/plugins/basic-plugin-creation/#protecting-the-alias-and-adding-scope
     </script>
 </body>
