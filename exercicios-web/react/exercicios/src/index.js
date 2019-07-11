@@ -7,8 +7,13 @@ import ReactDOM from "react-dom";
 // export default, e export normal
 
 //import Multi from './componentes/Multiplus.jsx';
+//import Multi, { BoaNoite } from './components/Multiplus'
 
-import Multi, { BoaNoite } from './componentes/Multiplus'
+//import Saudacao from './components/Saudacao.jsx'
+
+import Pai from "./components/Pai"
+import Filho from './components/Filho'
+
 
 //ReactDOM.render(<Dia nome="Juca" idade={true} />, document.getElementById("root"));
 
@@ -21,9 +26,18 @@ import Multi, { BoaNoite } from './componentes/Multiplus'
 
 ReactDOM.render(
     <div>
-        <Multi.BoaTarde nome="Ana" />   {/* Usando pelo objeto Multi  */}
-        <BoaNoite nome="Leo" /> {/* Usando pelo destructuring */}
+        {/* <Saudacao tipo="Bom dia" nome="João" /> */}
+        <Pai nome="Paulo" sobrenome="Silva" >
+            {/* Como passo os componentes Filhos aqui? */}
+            <Filho nome="Cauã" />
+            <Filho nome="Maria" />
+            <Filho nome="Carla" />
+        </Pai>
     </div>
+    // <div>
+    //     <Multi.BoaTarde nome="Ana" />   {/* Usando pelo objeto Multi  */}
+    //     <BoaNoite nome="Leo" /> {/* Usando pelo destructuring */}
+    // </div>
     , document.getElementById("root"));
 
 
