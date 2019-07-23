@@ -175,6 +175,8 @@ viewport eh o tamanho da pagina
 
 O bootstrap nas versões mais atuais já passou a utilizar flexbox, então não há necessidade de você utilizar combinado
 
+https://uigradients.com
+
 Eu não sou muito fã do bootstrap, existem outros frameworks que prefiro utilizar quando eu não quero perder muito tempo mexendo com css
 
 Atualmente o meu queridinho é o Bulma (https://bulma.io/). Acho bem simples e fácil de lembrar e utilizar. Para fazer um grid basta eu colocar a class columns no container principal e column nos elementos que vão dentro do container que ele organiza. Para colocar o tamanho que ocupa no grid só usar is-size-4 e se quiser separar responsivo dá pra fazer is-size-4-desktop ,  is-size-5-tablet e is-size-6-mobile  Um botão basta colocar .button e se for primário é só adicionar .is-primary . Se um parágrafo precisar ser centralizado a class é .has-text-centered  e por aí vai E ele é modular também, se eu quiser utilizar só pra botões eu consigo que no build do projeto ele import só css respectivo para botões, se se for utilizar só grid, import do css só do grid. O que deixa mais leve.
@@ -209,3 +211,6 @@ REACT
 
 npm i -g create-react-app
 create-react-app  'nomeDoProjeto'
+
+
+

@@ -1,0 +1,44 @@
+/* Variaveis em css */
+
+:root {
+    --bg-button: #f0f0f0;
+    /* criou a variavel bg-button */
+    --border-button: solid 1px #888;
+}
+
+.button {
+    font-size: 1.4em;
+    background-color: var(--bg-button);
+    /* var referência a variável */
+    border: none;
+    border-right: var(--border-button);
+    border-bottom: var(--border-button);
+    outline: none;
+    /* tira aquela bordar ao clicar */
+}
+
+/* subclasse active (quando clicar no botão) */
+.button:active {
+    background-color: #ccc;
+}
+
+/* quando o botão ocupa 2 posições */
+.button.double {
+    grid-column: span 2;
+}
+
+/* botão triplo */
+.button.triple {
+    grid-column: span 3;
+}
+
+/* quando o botão apresentar uma operação */
+.button.operation {
+    background-color: #fa8231;
+    color: #fff;
+}
+
+/* quando o botão for uma operação e estiver ativo */
+.button.operation:active {
+    background-color: #fa8231cc;
+}
