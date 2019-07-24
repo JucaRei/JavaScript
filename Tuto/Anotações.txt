@@ -204,6 +204,13 @@ npm i --save-dev popper.js@1.14.3 -E             ToolTips
 https://getbootstrap.com/docs/4.0/utilities/spacing/
 
 
+STUB internacionalização  
+
+https://medium.freecodecamp.org/setting-up-internationalization-in-react-from-start-to-finish-6cb94a7af725?gi=7c1e421f5445
+
+https://github.com/i18next/react-i18next
+
+
 
 
 SECTION 
@@ -213,4 +220,24 @@ npm i -g create-react-app
 create-react-app  'nomeDoProjeto'
 
 
+SECTION  JSON crud 
+JSON Server  -  npm i --save json-server@0.13.0 -E
 
+
+
+package.json - 
+tira o teste e coloca o : 
+"scripts": {
+    "start": "json-server --watch db.json --port 3001"
+    Para fica monitorando o arquivo db.json na porta selecionada   NOTE  Backend na porta 3001 e front end na porta 3000
+
+
+Aula 355-  create-react-app frontend
+"axios": "0.18.0"   - cliente http, faz chamadas ajax (todas as operações necessárias, para salvar os dados no back-end)
+"bootstrap": "4.1.1"  -  bootstrap
+"font-awesome": "4.7.0"     - biblioteca de icones
+"react-router": "4.2.0"     - para navegar entre os componentes
+"react-router-dom": "4.2.2"   - 
+
+
+npm init -y  cria o package.json

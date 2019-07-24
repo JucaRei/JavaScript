@@ -1,0 +1,21 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.min.css'
+import './App.css'
+import React from 'react'
+
+import Logo from '../components/template/Logo'
+import Nav from '../components/template/Nav'
+// importando o main ja vem o header, porque no main ja tem o header importado
+import Main from '../components/template/Main'
+import Footer from '../components/template/Footer'
+
+
+// Componente funcional, sem estado
+export default props =>
+    <div className="app">
+        <Logo />
+        <Nav />
+        <Main icon="home" title="Início"
+            subtitle="Segundo Projeto do capítulo de React." />
+        <Footer />
+    </div>
