@@ -1,0 +1,21 @@
+aside.menu-area {
+    background-color: var(--bg-dark);
+    box-shadow:
+        2px 0 10px 0 rgba(0, 0, 0, 0.12),
+        2px 0 15px 0 rgba(0, 0, 0, 0.09)
+}
+
+.menu a {
+    /* cada link na sua própria linha */
+    display: block;
+    /* tira o sublinhado */
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    padding: 15px;
+}
+
+/* quando botar o mouse por cima, ele ficar com um gradient */
+.menu a:hover {
+    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+}
