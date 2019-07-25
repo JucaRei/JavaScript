@@ -1,12 +1,14 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Otilio Neto",
-        "email": "o.neto@xdevs.com.br"
-
-    }, {
-        "id": 2,
-        "name": "Jack Daniels",
-        "email": "jdaniels@xdevs.com.br"
-    }]
+  "users": [
+    {
+      "id": 2,
+      "name": "Jack Daniels",
+      "email": "jdaniels@xdevs.com.br"
+    },
+    {
+      "name": "Juca dev",
+      "email": "xdev@gmail.com",
+      "id": 3
+    }
+  ]
 }

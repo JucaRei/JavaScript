@@ -1,10 +1,9 @@
-/* recurso do proprio css */
 :root {
     --bg-dark: #1A2F3A;
 
-    --logo-height: 98px;
+    --logo-height: 100px;
     --header-height: 100px;
-    /* largura do menu */
+    --menu-top-height: 70px;
     --aside-width: 225px;
     --footer-height: 40px;
 
@@ -13,30 +12,25 @@
         0 2px 49px 0 rgba(0, 0, 0, 0.06);
 }
 
-/* aplicação toda */
 * {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Layout de Grid */
-/* div que envolve toda a aplicação */
+/* Layout em Grid */
+
 .app {
     margin: 0px;
     display: grid;
-    /* vai ter 2 colunas, 1 vai ser a largura(--aside-width), a outra coluna vai ocupar o resto(1fr) (1 frame) */
-    grid-template-columns: var(--aside-width) -1fr;
-    /* 2 linhas , --header-height altura do cabeçalho, 1fr (ocupar a largura do maio o maximo que der) que é de fato o conteúdo inteiro da aplicação, (altura do rodape)  */
+    grid-template-columns: var(--aside-width) 1fr;
     grid-template-rows:
         var(--header-height) 1fr var(--footer-height);
-    /* definir o que que irá ficar em cada área */
     grid-template-areas:
         "logo header"
         "menu content"
         "menu footer";
-    /* vai ocupar a altura inteira do viewPort */
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
 }
 
 aside.logo {
@@ -57,4 +51,30 @@ main.content {
 
 footer.footer {
     grid-area: footer;
+}
+
+@media(max-width: 768px) {
+    .app {
+        grid-template-rows:
+            var(--header-height) var(--menu-top-height) 1fr var(--footer-height);
+        grid-template-columns: var(--aside-width) 1fr;
+        grid-template-areas:
+            "logo header"
+            "menu menu"
+            "content content"
+            "footer footer";
+    }
+}
+
+@media(max-width: 576px) {
+    .app {
+        grid-template-rows:
+            var(--logo-height) var(--menu-top-height) 1fr var(--footer-height);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "logo"
+            "menu"
+            "content"
+            "footer";
+    }
 }

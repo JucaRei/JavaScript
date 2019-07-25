@@ -241,3 +241,13 @@ Aula 355-  create-react-app frontend
 
 
 npm init -y  cria o package.json
+
+
+SECTION 
+Links- 
+
+https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+https://www.udemy.com/curso-web/learn/lecture/10666776#questions/6478512
+https://desenvolvimentoparaweb.com/javascript/this-javascript-dominando/
+https://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
+https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet
