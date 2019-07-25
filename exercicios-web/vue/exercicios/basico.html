@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Conceitos Básicos</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
-<body class="exercicio">
 
+<body class="exercicio">
+    <!-- área de template, será controlado pelo Vue, onde vai renderizar -->
+    <div id="app">
+        <p>1) {{2 + 2}} </p> <!-- {{ }} - double moustache -->
+        <!-- dentro da expressão pode colocar codigo JS -->
+        <p>2){{ "teste".toUpperCase()  }}</p>
+        <!-- o Vue sabe automaticamente, não precisa do this -->
+        <p>3) Produto: {{ nome }}, R$: {{ preco }}, {{ desconto * 100}}% </p>
+        <p>4) Hora Certa: {{ horaCerta() }}</p>
+    </div>
     <script>
-        // ...
+        // propriedades
+        new Vue({
+            // el - element , '#app' é o seletor 
+            el: "#app",
+            // atributo data associa a um objeto
+            data: {
+                nome: 'Caneta',
+                preco: 6.89,
+                desconto: 0.15
+            }, // metodos que eu posso invocar dentro do template
+            methods: {
+                horaCerta() {
+                    return new Date().toLocaleString()
+                }
+            },
+        })
     </script>
 </body>
+
 </html>
