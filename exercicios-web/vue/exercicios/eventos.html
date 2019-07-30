@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Eventos</title>
-    <link rel="stylesheet" href="/css/estilo.css">
-    <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
 
-    <script>
-        // ...
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <title>Eventos</title>
+  <link rel="stylesheet" href="/css/estilo.css" />
+  <script src="/js/vue.min.js"></script>
+</head>
+
+<body class="exercicio">
+  <div id="app">
+    <p>{{ contador }}</p>
+    <p>
+      <!-- v-on faz um binding de um função/método, pra ser chamado no momento em que acontecer o evento -->
+      <button v-on:click="add">+1</button>
+      <!-- outra maneira além do v-on, pode diretamente dentro da expressão fazer alguma operação (atribuição subtrativa)  -->
+      <button @click="contador -= 2">-2</button>
+      <!-- @ ou executa um trecho de codigo ou até mesmo chama uma função-->
+    </p>
+    <p @mousemove="atualizarPosicao"> <!-- mouse move associado a esse paragrafo-->
+      Coordenadas: {{x}} e {{y}}
+      <span @mousemove.stop>Aqui Não</span> <!-- dentro desse span ele vai parar de monitorar -->
+    </p>
+    <input type="text" @keyup.enter="alerta"> <!-- vai escutar o evento keyup, no caso quando o usuário clicar na tecla enter-->
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        x: 0,
+        y: 0,
+        contador: 0
+      },
+      methods: {
+        add() {
+          this.contador++;
+        },
+        atualizarPosicao(e) {
+          this.x = e.clientX
+          this.y = e.clientY
+        },
+        alerta() {
+          alert('Enter!')
+        }
+      }
+    });
+  </script>
 </body>
+
 </html>

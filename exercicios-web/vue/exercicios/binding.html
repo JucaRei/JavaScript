@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Binding</title>
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css" />
     <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
-
+  </head>
+  <body class="exercicio">
+    <div id="app">
+      <p>{{ link }}</p>
+      <p><a href="{{ link }}">Canal?</a></p>
+      <!-- v-bind:  vai interpolar esse link -->
+      <p><a v-bind:href="link">Canal?</a></p>
+      <!-- outra forma de fazer um binding -->
+      <p><a :href="link">Canal? Outra forma reduzida sem v-bind</a></p>
+      <p>
+        <!-- gera uma mudança a partir do input, atualiza o data (atualização em 2 vias) -->
+        <input type="text" v-model="nome" /> <br />
+        <span>{{ nome }}</span>
+      </p>
+    </div>
     <script>
-        // ...
+      new Vue({
+        el: "#app",
+        data: {
+          nome: "Maria",
+          link: "https://youtube.com/cod3rcursos"
+        },
+        watch: {
+          // funções que serão chamadas, quando determinado valor for alterado
+          nome(novoValor) {
+            // sempre que o nome for alterado, essa função será automaticamente chamada
+            console.log(novoValor.toUpperCase());
+          }
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
