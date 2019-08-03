@@ -10,13 +10,22 @@
 
 <body class="exercicio">
     <div id="app">
-        HAHA
+        <saudacao nome="Ana"></saudacao>
+        <saudacao nome="Juca"></saudacao>
+        <saudacao nome="Eva"></saudacao>
     </div>
     <script>
+        Vue.component('saudacao', {
+            props: ['nome'], // parâmetros      - / componentes com dados, tem que retornar uma function 
+            template: `
+                <div>Bom dia {{ nome }}!</div>
+            `
+        })
         new Vue({
-
+            el: '#app'
         })
     </script>
 </body>
 
 </html>
+
