@@ -11,16 +11,44 @@
 
 <body>
 
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <div>
+            <!--
+                O texto que você colocou lá no data, vai ser interpolado, no text. @input sempre que o usuario colocar
+                alguma coisa nesse input, ele vai chamar a função onData -->
+            <input type="text" size="25" placeholder="Digite para gerar o QRcode..." v-model="text">
+            <!-- Será exibida quando o texto estiver presente. -->
+            <div v-if="text" class="output">
+                <!-- Associado ao campo calculado newQRcode -->
+                <img :src="newQRCode" alt="QRCode">
+            </div>
+        </div>
+    </div>
+
     <script>
         new Vue({
             el: "#app",
             data: {
                 title: 'Gerador QRCode',
                 text: 'https://www.cod3r.com.br',
-                qrcode: new QRious({ size: 300 })    // aponta pra 1 instancioa do qrious que foi importada
-            }
+                qrcode: new QRious({ size: 300 })    // aponta pra 1 instancia da dependência qrious que foi importada
+            },
+            computed: {     // atributo calculado
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            }//,
+            // methods: {
+            //     onData(event) {
+            //         this.text = event.target.value
+            //     }
+            // }
         })
     </script>
 </body>
 
 </html>
+
+<!-- Na verdade o v-model serve apenas ligar um determinado componente da interface com uma propriedade! Ou seja, o que for alterado no campo de texto irá alterar o valor de text e vice-versa ok?  -->
