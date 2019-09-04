@@ -1,3 +1,22 @@
+
+db.empresas.aggregate([
+    {$match: {nome: "Bradesco"}},
+]).pretty()
+
+localField - campo dentro de empresas que faz relacao com campo estados (estadoId) 
+foreignField - pertence a estados
+as - nome do atributo desse lookup
+
+db.empresas.aggregate([
+    {$match: {nome: "Bradesco"}},
+    {$lookup: {
+        from: "estados",
+        localField: "estadoId",
+        foreignField: "_id",
+        as: "estado" 
+    }},
+]).pretty()
+
 db.empresas.aggregate([
     {$match: {nome: "Bradesco"}},
     {$lookup: {
@@ -8,3 +27,45 @@ db.empresas.aggregate([
     }},
     {$unwind: "$estado"},
 ]).pretty()
+
+
+Tirar os estado
+db.empresas.aggregate([
+    {$match: {nome: "Vale"}},
+    {$lookup: {
+        from: "estados",
+        localField: "cidadeId",
+        foreignField: "cidades._id",
+        as: "estado"
+    }},
+    {$unwind: "$estado"},
+]).pretty()
+
+
+db.empresas.aggregate([
+    {$match: {nome: "Vale"}},
+    {$lookup: {
+        from: "estados",
+        localField: "cidadeId",
+        foreignField: "cidades._id",
+        as: "estado"
+    }},
+    {$unwind: "$estado"},
+    {$unwind: "$estado.cidades"},
+]).pretty()
+
+
+db.empresas.aggregate([
+    {$match: {nome: "Vale"}},
+    {$lookup: {
+        from: "estados",
+        localField: "cidadeId",
+        foreignField: "cidades._id",
+        as: "estado"
+    }},
+    {$unwind: "$estado"},
+    {$unwind: "$estado.cidades"},
+    {$addFields: {mesmaCidade: {$cmp: ["estado.cidades._id", "$cidadeId"]}}},
+]).pretty()
+
+{$match: {"estado.cidades._id": "$cidadeId"}}

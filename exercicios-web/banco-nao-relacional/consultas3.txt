@@ -1,6 +1,13 @@
+Pesquisar dentro da coleção de estados, qual é o que tem a cidade Sorocaba, e extrair apenas da cidade Sorocaba
+o id dessa cidade.
+
 db.estados.aggregate([
     { $match: {"cidades.nome": "Sorocaba"} },
-    { $unwind: "$cidades"},
+    { $unwind: "$cidades"},     // desenrolar
     { $match: {"cidades.nome": "Sorocaba"} },
     { $project: {_id: "$cidades._id"} }
 ]).pretty()
+
+
+O $ representa funções dentro do aggregate, exemplo:
+

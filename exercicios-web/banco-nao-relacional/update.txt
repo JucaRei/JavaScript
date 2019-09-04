@@ -2,6 +2,7 @@ db.estados.update({sigla: "SP"},{$set: {populacao: 45340000}})
 
 db.estados.update({sigla: "AL"},{$set: {cidades: [{nome: "Sergipe"}]}})
 
+Ao inves de um set , foi feito um push
 db.estados.update(
     {sigla: "SP"},
     {$push: {cidades: {nome: "Santos", populacao: 433966}}}
