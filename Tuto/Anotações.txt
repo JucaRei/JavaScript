@@ -251,3 +251,9 @@ https://www.udemy.com/curso-web/learn/lecture/10666776#questions/6478512
 https://desenvolvimentoparaweb.com/javascript/this-javascript-dominando/
 https://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
 https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet
+
+
+
+
+pm2  - produção
+nodemon - desenvolvimento
