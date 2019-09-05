@@ -1,8 +1,20 @@
 const express = require('express')
 const app = express ()
+const bodyParser = require('body-parser')
 
 const saudacao = require('./saudacaoMiddleware')
+const usuarioApi = require('./api/usuario')
+const produtoApi = require('./api/produto')
+produtoApi(app, 'com param!')
+//parâmetros e chamar a função
+//require('./api/produto')(app, 'com param!')
 
+app.post('/usuario', usuarioApi.salvar)
+app.get('/usuario', usuarioApi.obter)
+
+app.use(bodyParser.text())      // qualquer texto que chegue no corpo da requisição será interpretado
+app.use(bodyParser.json())      // JSON 
+app.use(bodyParser.urlencoded({extended: true}))    //urlencoded
 app.use(saudacao('Juca'))
 
 // express chain of responsability -  next = para ir pro proximo metodo
@@ -15,23 +27,25 @@ app.get('/clientes/relatorio', (req, res) => {
     res.send(`Cliente relatório: completo = ${req.query.completo}, ano = ${req.query.ano}`)
 })
 
-app.post('/corpo', (req, res) => {
-    let corpo = ''
-    req.on('data', function(parte) {
-        corpo += parte
-    })
-
-    req.on('end', function(){
-        res.send(corpo)
-    })
-})
-
 // :id (parâmetro) - algo que pode mudar dentro da URL
 app.get('/clientes/:id', (req, res) => {
     res.send(`Cliente ${req.params.id} selecionado!`)
 })
 
 
+app.post('/corpo', (req, res) => {
+
+    // let corpo = ''
+    // req.on('data', function(parte) {
+    //     corpo += parte
+    // })
+
+    // req.on('end', function(){
+    //     res.send(corpo)
+    // })
+    //res.send(req.body)      // body-parser  - text
+    res.send(JSON.stringify(req.body))      // body-parser - JSON
+})
 
 // requisição e resposta  (get, post, all)
 app.get('/opa', (req, res, next) => {
@@ -77,3 +91,5 @@ app.use( (req, res, next) => {
 app.listen(3000, () => {
     console.log("Backend executando...")
 })
+
+// urlencoded é o padrão quando submete um formulario na web
