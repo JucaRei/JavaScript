@@ -11,3 +11,8 @@ where sigla = 'PR'
 
 select nome, sigla, populacao 
 from estados where sigla = "PR" 
+
+-- banco knowledge
+update users
+set admin = true
+where name = 'juca';
