@@ -197,14 +197,14 @@ REVIEW - An item that needs additional review
 SECTION - Used to define a region (See 'Hierarchical anchors')
 
 
-STUB 
+STUB
 Cap bootstrap
 npm i --save-dev jquery@3.3.1 -E
 npm i --save-dev popper.js@1.14.3 -E             ToolTips
 https://getbootstrap.com/docs/4.0/utilities/spacing/
 
 
-STUB internacionalização  
+STUB internacionalização
 
 https://medium.freecodecamp.org/setting-up-internationalization-in-react-from-start-to-finish-6cb94a7af725?gi=7c1e421f5445
 
@@ -213,20 +213,20 @@ https://github.com/i18next/react-i18next
 
 
 
-SECTION 
+SECTION
 REACT
 
 npm i -g create-react-app
 create-react-app  'nomeDoProjeto'
 
 
-SECTION  JSON crud 
+SECTION  JSON crud
 JSON Server  -  npm i --save json-server@0.13.0 -E
 
 
 
-package.json - 
-tira o teste e coloca o : 
+package.json -
+tira o teste e coloca o :
 "scripts": {
     "start": "json-server --watch db.json --port 3001"
     Para fica monitorando o arquivo db.json na porta selecionada   NOTE  Backend na porta 3001 e front end na porta 3000
@@ -237,14 +237,14 @@ Aula 355-  create-react-app frontend
 "bootstrap": "4.1.1"  -  bootstrap
 "font-awesome": "4.7.0"     - biblioteca de icones
 "react-router": "4.2.0"     - para navegar entre os componentes
-"react-router-dom": "4.2.2"   - 
+"react-router-dom": "4.2.2"   -
 
 
 npm init -y  cria o package.json
 
 
-SECTION 
-Links- 
+SECTION
+Links-
 
 https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 https://www.udemy.com/curso-web/learn/lecture/10666776#questions/6478512
@@ -257,3 +257,9 @@ https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet
 
 pm2  - produção
 nodemon - desenvolvimento
+
+----------------------------------------------------------------------------------------------------
+
+VUEJS
+
+https://github.com/vuejs/awesome-vue#animation
