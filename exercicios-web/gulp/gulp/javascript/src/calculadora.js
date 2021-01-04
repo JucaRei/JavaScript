@@ -24,16 +24,3 @@ const Calculadora = {
         console.log(this._resultado)
     }
 }
-
-const r = Calculadora.somar(10, 5).potencia(2, 8).zerar().somar(4, 5).resultado
-console.log(`O resultado é:${r}`)
-
-Calculadora.zerar().somar(300, 700).somar(1000).log()
-
-/* _resultado -> é um underscore , que é usado como um modificador private, protected , etc.
-Uma convenção que os desenvolvedores criaram foi usar o underscore antes da propriedade para representar propriedades privadas. Dessa maneira, os desenvolvedores ao utilizar outras bibliotecas, respeitavam essas "propriedades privadas"!
-*/
-
-/**
- *  return this  - consegue encadear uma soma e chama ela denovo
- */
