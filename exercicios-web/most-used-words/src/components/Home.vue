@@ -39,10 +39,23 @@ export default {
   },
   methods: {
     processSubtitles() {
-      ipcRenderer.send("process-subtitles", this.files);
-      ipcRenderer.on("process-subtitles", (event, resp) => {
-        this.groupedWords = resp;
-      });
+      // acima do electron 6 tem que fazer o tratamento, senão dá erro
+      // Files é objeto da DOM e não é serializado em electron acima da versão 6
+      try {
+        const paths = this.files.map((f) => f.path);
+        ipcRenderer.send("process-subtitles", paths);
+        console.log(paths);
+      } catch (e) {
+        console.log(e);
+      }
+
+      try {
+        ipcRenderer.on("process-subtitles", (event, resp) => {
+          this.groupedWords = resp;
+        });
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
