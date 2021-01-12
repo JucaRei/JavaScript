@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "name": "Caneta Mont Blanc",
+      "price": "139.49",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Notebook Macbook Air",
+      "price": 12000.89
+    },
+    {
+      "id": 3,
+      "name": "Samsung S20+",
+      "price": 5
+    },
+    {
+      "name": "Geladeira Samsung",
+      "price": 4850.59,
+      "id": 4
+    }
+  ]
+}
