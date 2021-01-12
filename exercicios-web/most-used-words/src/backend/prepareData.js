@@ -6,12 +6,13 @@ module.exports = (rows) => {
         .map(removePonctuation)
         .map(removeTags)
         .reduce(mergeRows)
-        .split(" ")
-        .map((word) => word.toLowerCase());
+        .split(' ')
+        .map(word => word.toLowerCase())
+        .map(word => word.replace('"', ''))
 
       resolver(words);
-    } catch (e) {
-      reject(e);
+    } catch (error) {
+      reject(error);
     }
   });
 };
@@ -23,6 +24,6 @@ function filterValidRow(row) {
   return notNumber && notEmpty && notInterval;
 }
 
-const removePonctuation = (row) => row.replace(/[,?!.-;:_=*+"]/g, "");
-const removeTags = (row) => row.replace(/(<[^>]+)>/gi, "").trim();
+const removePonctuation = (row) => row.replace(/[,?!.-;:_=*+"]/g,'');
+const removeTags = (row) => row.replace(/(<[^>]+)>/ig,'').trim();
 const mergeRows = (fullText, row) => `${fullText} ${row}`;
